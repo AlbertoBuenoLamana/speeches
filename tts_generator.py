@@ -18,7 +18,7 @@ import os
 # es-AR-ElenaNeural    (Femenina, Argentina)
 # es-CO-SalomeNeural   (Femenina, Colombia)
 
-VOICE = "es-MX-DaliaNeural"
+VOICE = "es-ES-AlvaroNeural"
 RATE = "+0%"       # Velocidad: -50% a +100%
 VOLUME = "+0%"     # Volumen: -50% a +100%
 PITCH = "+0Hz"     # Tono: -50Hz a +50Hz
@@ -101,8 +101,8 @@ def ssml_to_plain_text(ssml_text: str) -> str:
     text = re.sub(r'</?p>', '', text)
     text = re.sub(r'</?s>', '', text)
 
-    # Reemplazar breaks con marcador
-    text = re.sub(r'<break\s+time="\d+ms"\s*/>', '\n[PAUSA]\n', text)
+    # Eliminar breaks (edge-tts no soporta SSML breaks)
+    text = re.sub(r'<break\s+time="\d+ms"\s*/>', '', text)
 
     # Limpiar cualquier otro tag
     text = re.sub(r'<[^>]+>', '', text)
@@ -144,15 +144,11 @@ def build_edge_ssml(text: str, voice: str = VOICE) -> str:
     return '\n'.join(ssml_parts)
 
 
-async def generate_audio(text_input: str, output_file: str, use_ssml: bool = False):
+async def generate_audio(text_input: str, output_file: str):
     """
     Genera audio MP3 usando edge-tts.
     """
-    if use_ssml:
-        communicate = edge_tts.Communicate(text_input, voice=VOICE)
-    else:
-        communicate = edge_tts.Communicate(text_input, voice=VOICE, rate=RATE, volume=VOLUME, pitch=PITCH)
-
+    communicate = edge_tts.Communicate(text_input, voice=VOICE, rate=RATE, volume=VOLUME, pitch=PITCH)
     await communicate.save(output_file)
     size_kb = os.path.getsize(output_file) / 1024
     print(f"Audio generado: {output_file} ({size_kb:.1f} KB)")
