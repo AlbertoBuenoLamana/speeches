@@ -1,0 +1,709 @@
+<speak>
+
+  Amazon EC2
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      EC2 es uno de los servicios más populares de AWS.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      EC2 significa Elastic Compute Cloud, que es una forma de Infraestructura como Servicio.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      Principalmente consiste en la capacidad de:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Alquilar máquinas virtuales (EC2).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Almacenar datos en unidades de disco virtuales (EBS).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Distribuir la carga entre máquinas (ELB).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Escalar los servicios utilizando grupos de escalado automático (ASG).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      Conocer EC2 es fundamental para comprender cómo funciona la nube.
+
+    </s>
+
+  </p>
+
+  Opciones de Tamaño y Configuración de EC2
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Sistema Operativo (OS): Linux, Windows o Mac OS.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Potencia de cálculo y núcleos (CPU) necesarios.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Cantidad de memoria de acceso aleatorio (RAM) necesaria.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Espacio de almacenamiento requerido: adjunto en red (EBS y EFS) y hardware (EC2 Instance Store).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Tarjeta de red: velocidad de la tarjeta, dirección IP pública.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Reglas de firewall: grupo de seguridad.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Script de inicio (configuración en el primer lanzamiento): EC2 User Data.
+
+    </s>
+
+  </p>
+
+  EC2 User Data
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Es posible configurar nuestras instancias mediante un script de EC2 User Data.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • La configuración inicial implica ejecutar comandos cuando una máquina se inicia.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Este script se ejecuta solo una vez al iniciar la instancia por primera vez.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • EC2 User Data se utilizan para automatizar tareas de inicio, como:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Instalar actualizaciones.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Instalar software.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Descargar archivos comunes de Internet.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Cualquier tarea que puedas imaginar.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • El script de EC2 User Data se ejecuta con el usuario root.
+
+    </s>
+
+  </p>
+
+  Resumen de Tipos de Instancias de EC2
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Puedes utilizar diferentes tipos de instancias de EC2 que están optimizados para diferentes casos de uso.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • AWS sigue la siguiente convención de nomenclatura:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - m5.2xlarge
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • m: clase de instancia.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • 5: generación (AWS las mejora con el tiempo).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • 2xlarge: tamaño dentro de la clase de instancia.
+
+    </s>
+
+  </p>
+
+  Tipos de Instancias de EC2 - Optimizadas para Cómputo
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Ideales para tareas intensivas en cómputo que requieren procesadores de alto rendimiento:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Cargas de trabajo de procesamiento por lotes.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Transcodificación de medios.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Servidores web de alto rendimiento.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Cómputo de alto rendimiento (HPC).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Modelado científico y aprendizaje automático.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Servidores de juegos dedicados.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      Un ejemplo de este tipo serían C4, C5, C6g, C6gn.
+
+    </s>
+
+  </p>
+
+  Tipos de Instancias de EC2 - Optimizadas para la Memoria
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Ofrecen un rendimiento rápido para cargas de trabajo que procesan grandes conjuntos de datos en memoria.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Casos de uso:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Bases de datos relacionales/no relacionales de alto rendimiento.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Almacenes de caché distribuidos a escala web.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Bases de datos en memoria optimizadas para inteligencia empresarial (BI).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Aplicaciones que realizan procesamiento en tiempo real de grandes conjuntos de datos no estructurados.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      Un ejemplo de este tipo serían R4, R5, R5a, R6.
+
+    </s>
+
+  </p>
+
+  Tipos de Instancias de EC2 - Optimizadas para el Almacenamiento
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Ideales para tareas intensivas en almacenamiento que requieren acceso de lectura y escritura secuencial a conjuntos de datos grandes en almacenamiento local.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Casos de uso:
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Sistemas de procesamiento de transacciones en línea de alta frecuencia (OLTP).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Bases de datos relacionales y NoSQL.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Caché para bases de datos en memoria (por ejemplo, Redis).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Aplicaciones de almacenamiento de datos.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Sistemas de archivos distribuidos.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      Un ejemplo de este tipo serían D2, D3, H1, I3 e I3en.
+
+    </s>
+
+  </p>
+
+  EC2 Instance Connect
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Conéctate a tu instancia de EC2 desde tu navegador.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • No es necesario utilizar el archivo de clave que se descargó.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • La "magia" es que AWS carga una clave temporal en EC2.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Funciona directamente con Amazon Linux 2.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Asegúrate de que el puerto 22 esté abierto.
+
+    </s>
+
+  </p>
+
+  Opciones de Compra de Instancias de EC2
+
+  <break time="500ms"/>
+
+  <p>
+
+    <s>
+
+      • Instancias a Demanda, On-Demand Instances: cargas de trabajo cortas, precios predecibles, pago por segundo.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Reservadas (1 y 3 años):
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Instancias Reservadas, Reserved Instances: cargas de trabajo largas.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      - Instancias Reservadas Convertibles, Convertible Reserved Instances: cargas de trabajo largas con instancias flexibles.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Planes de Ahorro, Savings Plans (1 y 3 años): compromiso de uso, cargas de trabajo largas.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Instancias Spot, Spot Instances: cargas de trabajo cortas, económicas, pueden perderse (menos confiables).
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Hosts Dedicados, Dedicated Hosts: reservar un servidor físico completo, controlar la ubicación de la instancia.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Instancias Dedicadas, Dedicated Instances: ningún otro cliente compartirá su hardware.
+
+    </s>
+
+  </p>
+
+  <p>
+
+    <s>
+
+      • Reservas de Capacidad, Capacity Reservations: reservar capacidad en una zona de disponibilidad específica por cualquier duración.
+
+    </s>
+
+  </p>
+
+</speak>
